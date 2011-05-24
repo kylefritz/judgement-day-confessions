@@ -1,0 +1,187 @@
+/* -----------------------------------------------------------------------
+
+
+ Blueprint CSS Framework 1.0
+ http://blueprintcss.org
+
+   * Copyright (c) 2007-Present. See LICENSE for more info.
+   * See README for instructions on how to use Blueprint.
+   * For credits and origins, see AUTHORS.
+   * This is a compressed file. See the sources in the 'src' directory.
+
+----------------------------------------------------------------------- */
+
+/* reset.css */
+html {margin:0;padding:0;border:0;}
+body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, nav, section {margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure, dialog, footer, header, hgroup, menu, nav, section {display:block;}
+body {line-height:1.5;background:white;}
+table {border-collapse:separate;border-spacing:0;}
+caption, th, td {text-align:left;font-weight:normal;float:none !important;}
+table, th, td {vertical-align:middle;}
+blockquote:before, blockquote:after, q:before, q:after {content:'';}
+blockquote, q {quotes:"" "";}
+a img {border:none;}
+:focus {outline:0;}
+
+/* typography.css */
+html {font-size:100.01%;}
+body {font-size:75%;color:#222;
+  background:#fff;
+  font-family:'Helvetica Neue', Arial, Helvetica, sans-serif;}
+h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#111;}
+h1 {font-size:2em;line-height:1;margin-bottom:0.5em;}
+h2 {font-size:1.8em;margin-bottom:0.75em;}
+h3 {font-size:1.4em;line-height:1;margin-bottom:1em;}
+h4 {font-size:1em;line-height:1.25;margin-bottom:1.25em;}
+h5 {font-size:1em;font-weight:bold;margin-bottom:1.5em;}
+h6 {font-size:1em;font-weight:bold;}
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {margin:0;}
+p {margin:0 0 1.5em;}
+.left {float:left !important;}
+p .left {margin:1.5em 1.5em 1.5em 0;padding:0;}
+.right {float:right !important;}
+p .right {margin:1.5em 0 1.5em 1.5em;padding:0;}
+a:focus, a:hover {color:#09f;}
+a {color:#06c;text-decoration:underline;}
+
+
+/* Misc classes and elements
+-------------------------------------------------------------- */
+
+/* In case you need to add a gutter above/below an element */
+div.prepend-top, .prepend-top {
+  margin-top:1.5em;
+}
+div.append-bottom, .append-bottom {
+  margin-bottom:1.5em;
+}
+
+.clear { clear:both; }
+
+
+/* --------------------------------------------------------------
+
+   fancy-type.css
+   * Lots of pretty advanced classes for manipulating text.
+
+   See the Readme file in this folder for additional instructions.
+
+-------------------------------------------------------------- */
+
+/* Indentation instead of line shifts for sibling paragraphs. */
+   p + p { text-indent:2em; margin-top:-1.5em; }
+   form p + p  { text-indent: 0; } /* Don't want this in forms. */
+
+
+/* For great looking type, use this code instead of asdf:
+   <span class="alt">asdf</span>
+   Best used on prepositions and ampersands. */
+
+.alt {
+  color: #666;
+  font-family: "Warnock Pro", "Goudy Old Style","Palatino","Book Antiqua", Georgia, serif;
+  font-style: italic;
+  font-weight: normal;
+}
+
+
+/* For great looking quote marks in titles, replace "asdf" with:
+   <span class="dquo">&#8220;</span>asdf&#8221;
+   (That is, when the title starts with a quote mark).
+   (You may have to change this value depending on your font size). */
+
+.dquo { margin-left: -.5em; }
+
+
+/* Reduced size type with incremental leading
+   (http://www.markboulton.co.uk/journal/comments/incremental_leading/)
+
+   This could be used for side notes. For smaller type, you don't necessarily want to
+   follow the 1.5x vertical rhythm -- the line-height is too much.
+
+   Using this class, it reduces your font size and line-height so that for
+   every four lines of normal sized type, there is five lines of the sidenote. eg:
+
+   New type size in em's:
+     10px (wanted side note size) / 12px (existing base size) = 0.8333 (new type size in ems)
+
+   New line-height value:
+     12px x 1.5 = 18px (old line-height)
+     18px x 4 = 72px
+     72px / 5 = 14.4px (new line height)
+     14.4px / 10px = 1.44 (new line height in em's) */
+
+p.incr, .incr p {
+  font-size: 10px;
+  line-height: 1.44em;
+  margin-bottom: 1.5em;
+}
+
+
+/* Surround uppercase words and abbreviations with this class.
+   Based on work by Jørgen Arnor Gårdsø Lom [http://twistedintellect.com/] */
+
+.caps {
+  font-variant: small-caps;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  font-size:1.2em;
+  line-height:1%;
+  font-weight:bold;
+  padding:0 2px;
+}
+
+/*custom*/
+h3{
+margin-bottom: .5em;
+letter-spacing: 2px;
+}
+
+.callout{
+  margin:0 auto;
+  width: 90%;
+  max-width:300px;
+  text-align:center;
+  .source{
+    text-align:right;
+  }
+}
+.call{
+  margin:0 auto;
+  text-align:center;
+}
+.call .button{
+  padding:10px;
+  border:1px solid black;
+  border-radius:5px;
+  margin: 15px 30%;
+}
+.call .button a,.call .button a:hover{
+  color:black;
+  text-decoration:none;
+}
+.call .button:hover{
+  background: #333;
+}
+.center{
+  text-align:center;
+}
+.sort{
+  a{
+    padding: 0 10px;
+  }
+}
+ul{
+  margin: 0 10%;
+}
+li.confession{
+  margin-bottom:10px;
+  list-style:none;
+  p{
+    margin-bottom:30px;
+  }
+  form{
+   display:inline;
+  }
+}

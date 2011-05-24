@@ -1,0 +1,2 @@
+#!/usr/bin/env ruby
+`git add -A && git ci -m "#{ARGV[0]}" && git push origin master && cap deploy`

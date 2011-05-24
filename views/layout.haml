@@ -1,0 +1,54 @@
+!!! 5
+%html
+  %head
+    %title Judgement Day Confessions
+    %meta{ :name=>"viewport", :content=>"width=device-width, minimum-scale=1, maximum-scale=1"}
+    %link{ :rel=>'stylesheet',:href=> '/css/screen.css',:type=>"text/css"}
+  %body
+    %h1.center Judgement Day Confessions
+    %h4.center
+      %a{:target=>"_blank",:href=>"http://familyradio.com"}
+        21 May 2011
+    .callout
+      -w=rand(3)
+      -if w==0
+        %h3
+          %span.dquo> &#8220;
+          %span.alt> Definitely going to happen 
+          &#8221;
+        .source
+          &#8212;
+          %a{:target=>"_blank",:href=>"http://www.npr.org/2011/05/07/136053462/is-the-end-nigh-well-know-soon-enough"}
+            NPR News
+      -elsif w==1
+        %h3
+          %span.dquo> &#8220;
+          %span.alt> Their math checks with us
+          &#8221;
+        .source
+          &#8212;
+          %a{:target=>"_blank",:href=>"http://www.salon.com/news/feature/2011/05/10/rapture_may_21"}
+            Salon
+      -else w==2
+        %h3
+          %span.dquo> &#8220;
+          %span.alt> Kiss your ass good-bye
+          &#8221;
+        .source
+          &#8212;
+          %a{:target=>"_blank",:href=>"http://www.huffingtonpost.com/2011/01/04/may-21-2011-judgment-day_n_804166.html"}
+            Huffington Post
+    .call
+      .button
+        %a{:href=>"tel:(443) 305-8649"}
+          Make a Confession
+          %br
+          (443) 305-8649
+    %p.sort.center
+      %a{:href=>url('/')} recent
+      %a{:href=>url('/most-doomed')} most doomed
+      %a{:href=>url('/most-saved')} most saved
+    .content
+      .content=yield
+    .footer.center
+      %img{:src=>url('/judgement-day.png')}
