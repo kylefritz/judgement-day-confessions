@@ -1,17 +1,17 @@
 require "bundler/setup"
 Bundler.require(:default)
-require 'aws/s3'
-require 'ohm'
+require "aws/s3"
+require "ohm"
 
 set :haml, :format => :html5
 
 module JdayParams
   #TODO: change this to your own bucket
-  Bucket='jday-test'
+  Bucket="jday-test"
 
   #TODO: set credentials in env
-  AWS_KEY_ID=ENV['AWS_KEY_ID']
-  AWS_SECRET=ENV['AWS_SECRET']
+  AWS_KEY_ID=ENV["AWS_KEY_ID"]
+  AWS_SECRET=ENV["AWS_SECRET"]
 end
 
 before do
@@ -32,15 +32,15 @@ class Confession < Ohm::Model
   end
 end
 
-get '/' do
+get "/" do
   haml :index, {},{:confessions=> Confession.all.sort(:order=>"DESC")}
 end
 
-get '/most-doomed' do
+get "/most-doomed" do
   haml :index, {},{:confessions=> Confession.all.sort_by(:dooms,:order=>"DESC")}
 end
 
-get '/most-saved' do
+get "/most-saved" do
   haml :index, {},{:confessions=> Confession.all.sort_by(:forgives,:order=>"DESC")}
 end
 
@@ -55,11 +55,11 @@ end
     confession=Confession[params[:id]]
     raise Sinatra::NotFound if confession.nil?
     confession.incr "#{make_it}s".to_sym, 1
-    redirect request.referrer || '/'
+    redirect request.referrer || "/"
   end
 end
 
-post '/confession/:phone_number' do
+post "/confession/:phone_number" do
   AWS::S3::Base.establish_connection!(
     :access_key_id     => JdayParams::AWS_KEY_ID,
     :secret_access_key => JdayParams::AWS_SECRET
@@ -74,5 +74,5 @@ post '/confession/:phone_number' do
       :access => :public_read
   )
 
-  redirect '/'
+  redirect "/"
 end
