@@ -13,6 +13,10 @@ module JdayParams
   AWS_SECRET=ENV["AWS_SECRET"]
 end
 
+group :production do
+  require 'newrelic_rpm'
+end
+
 before do
   Ohm.connect :url => ENV['REDISTOGO_URL']
 end

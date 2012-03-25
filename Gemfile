@@ -11,5 +11,5 @@ group :developement do
 end
 
 group :production do
-  require 'newrelic_rpm'
+  gem 'newrelic_rpm'
 end
