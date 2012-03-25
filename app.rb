@@ -13,7 +13,7 @@ module JdayParams
   AWS_SECRET=ENV["AWS_SECRET"]
 end
 
-group :production do
+configure :production do
   require 'newrelic_rpm'
 end
 
