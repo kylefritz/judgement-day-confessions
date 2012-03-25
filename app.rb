@@ -1,12 +1,11 @@
-require "bundler/setup"
-Bundler.require(:default)
-require "aws/s3"
-require "ohm"
+require 'sinatra'
+require 'haml'
+require 'aws/s3'
+require 'ohm'
 
 set :haml, :format => :html5
 
 module JdayParams
-  #TODO: change this to your own bucket
   Bucket="jday-test"
 
   #TODO: set credentials in env
@@ -15,8 +14,7 @@ module JdayParams
 end
 
 before do
-  Ohm.connect
-  @redis=Ohm.redis
+  Ohm.connect :url => ENV['REDISTOGO_URL']
 end
 
 class Confession < Ohm::Model
