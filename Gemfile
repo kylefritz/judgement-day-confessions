@@ -9,3 +9,7 @@ gem 'ohm'
 group :developement do
   gem 'shotgun'
 end
+
+group :production do
+  require 'newrelic_rpm'
+end
