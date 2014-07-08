@@ -30,7 +30,7 @@ class Confession < Ohm::Model
   index :phone_number
 
   def s3url
-    "http://s3.amazonaws.com/#{JdayParams::Bucket}/consfession-#{@id}.mp3"
+    "http://s3.amazonaws.com/#{JdayParams::Bucket}/confession-#{@id}.mp3"
   end
 end
 
